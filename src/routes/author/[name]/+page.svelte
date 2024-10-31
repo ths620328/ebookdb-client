@@ -8,22 +8,15 @@
 
 <h2>Books of <span class="name">{$page.params.name}</span></h2>
 <div class="liste">
-	<div>
-		{#each books as book}
-			<BookDetail bookData={book} />
-		{/each}
-	</div>
+	{#each books as book}
+		<BookDetail bookData={book} />
+	{/each}
 </div>
 
 <style>
-	ul {
-		padding: 50;
-		list-style: none;
-	}
-
 	.liste {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 20px;
+		gap: 10px;
 	}
 </style>

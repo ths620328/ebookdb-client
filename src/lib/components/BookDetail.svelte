@@ -3,16 +3,16 @@
 
 	export let bookData;
 	// $: separator = bookData.series != '' && bookData.seriesnr != '' ? '#' : ' ';
-	$: base64Image = 'data:image/jpeg;base64, ' + btoa(bookData.cover.data);
+	//$: base64Image = 'data:image/jpeg;base64, ' + btoa(bookData.cover.data);
 </script>
 
 <div>
 	<Card>
-		<h5>{bookData.title}</h5>
+		<h5>{bookData.author} / {bookData.title}</h5>
 		<p>{bookData.titlesort}</p>
 		<!-- <p>{bookData.series} {separator} {bookData.seriesnr}</p> -->
 		<p>{bookData.category} / {bookData.publisher}</p>
-		<img src={base64Image} alt="book cover" />
+		<!-- <img src={base64Image} alt="book cover" /> -->
 		<!-- <pre>
       {base64Image}
     </pre> -->
@@ -27,6 +27,9 @@
 	}
 
 	p {
+		text-wrap: none;
+		text-overflow: ellipsis;
+		overflow: hidden;
 		margin: 0;
 		color: #444;
 		font-size: 0.9em;
